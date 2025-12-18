@@ -216,6 +216,7 @@ Must be a number between 0 and 1, exclusive."
       (gptel-request full-query
         :system elysium-base-prompt
         :buffer chat-buffer
+        :transforms gptel-prompt-transform-functions
         :callback (apply-partially #'elysium-handle-response code-buffer)))))
 
 (defun elysium-handle-response (code-buffer response info)
